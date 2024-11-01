@@ -18,7 +18,10 @@ address each one as they error out, but the software being used are:
  - 7za
 
 For my Debian based Linux distro, I got everything I needed with:
-  sudo apt install zip rar p7zip-full
+
+```
+sudo apt install zip rar p7zip-full
+```
 
 At the top of the script, there are two variables worth reviewing:
   directory_name - the name of the directory that will be archived
@@ -29,12 +32,16 @@ The default directory_name is set to "data". If this is correct, or if you
 go into the script and change the default name to the correct name, then the
 program just runs.
 
-  ./compare_compressions.sh
+```
+./compare_compressions.sh
+```
 
 In case it would help, you can provide the name of the directory you want to
 compress and it will overwrite the default option.
 
-  ./compare_compressions.sh my_data
+```
+./compare_compressions.sh my_data
+```
 
 This will test out the compression on a directory labeled "my_data"
 
@@ -47,14 +54,18 @@ directory, it should run in under a second.
 This does create actual files for each of the compression types. If you are
 rather new to Linux and Bash, you can easily remove these files with:
 
-  rm data.\*
+```
+rm data.\*
+```
 
 where data is the name of the directory. By adding in the . character, you
 won't risk deleting your directory, which is also guarded by the fact that
 the approriate flag was not provided to rm to delete a directory. You can
 add additional layers of caution with
 
-  rm -i data.\*
+```
+rm -i data.\*
+```
 
 This will prompt you before each deletion. I would include this step into the
 script, but I am cautious when it comes to public code. Also, someone might
