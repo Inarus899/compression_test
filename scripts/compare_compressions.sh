@@ -37,9 +37,9 @@ echo ""
 echo "-- GZ"
 if $verbose_output
   then
-  time tar -zcvf $filename.tar.gz $directory_name
+  time tar --gzip -cvf $filename.tar.gz $directory_name
 else
-  time tar -zcf $filename.tar.gz $directory_name
+  time tar --gzip -cf $filename.tar.gz $directory_name
 fi
 
 du -h $filename.tar.gz
@@ -48,9 +48,9 @@ echo ""
 echo "-- XZ"
 if $verbose_output
   then
-  time tar -cvf $filename.tar.xz $directory_name
+  time tar --xz -cvf $filename.tar.xz $directory_name
 else
-  time tar -cf $filename.tar.xz $directory_name
+  time tar --xz -cf $filename.tar.xz $directory_name
 fi
 
 du -h $filename.tar.xz
@@ -70,10 +70,10 @@ echo ""
 echo "-- 7ZIP mx=9"
 if $verbose_output
   then
-  time 7za a -bsp0 -mx=9 $filename.7z $directory_name
+  time 7za a -bsp0 -mx=9 $filename.7z9 $directory_name
 else
-  time 7za a -bso0 -bsp0 -mx=9 $filename.7z $directory_name
+  time 7za a -bso0 -bsp0 -mx=9 $filename.7z9 $directory_name
 fi
 
-du -h $filename.7z
+du -h $filename.7z9
 echo ""
